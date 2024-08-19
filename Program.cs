@@ -2,8 +2,10 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
-using SampleLoginApp.Models; // Namespace cho DbContext của bạn
-using MySql.EntityFrameworkCore.Extensions; // Đảm bảo bạn đã cài gói MySql.EntityFrameworkCore
+using SampleLoginApp.Models; 
+using Microsoft.EntityFrameworkCore;
+using MySql.EntityFrameworkCore.Extensions; 
+
 
 var builder = WebApplication.CreateBuilder(args);
 
