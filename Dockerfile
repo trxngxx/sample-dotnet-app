@@ -1,19 +1,19 @@
-# Sử dụng image SDK để build ứng dụng
+# Use image SDK 8.0 to build
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
 
-# Sao chép các file dự án và restore các gói nuget
+# Copy csproj and restore
 COPY *.csproj ./
 RUN dotnet restore
 
-# Sao chép toàn bộ mã nguồn và build ứng dụng
+# Copy all files and build
 COPY . ./
 RUN dotnet publish -c Release -o /app/publish
 
-# Sử dụng image runtime để chạy ứng dụng
+# Use image runtime 8.0 to run 
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
 WORKDIR /app
 COPY --from=build /app/publish .
 
-# Chạy ứng dụng
+# Run
 ENTRYPOINT ["dotnet", "SampleLoginApp.dll"]
