@@ -3,9 +3,6 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using SampleLoginApp.Models; 
-using Microsoft.EntityFrameworkCore;
-using MySql.EntityFrameworkCore.Extensions; 
-
 
 var builder = WebApplication.CreateBuilder(args);
 

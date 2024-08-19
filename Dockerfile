@@ -8,6 +8,7 @@ RUN dotnet restore
 
 # Copy all files and build
 COPY . ./
+RUN dotnet add package Pomelo.EntityFrameworkCore.MySql
 RUN dotnet publish -c Release -o /app/publish
 
 # Use image runtime 8.0 to run 
